@@ -1,5 +1,7 @@
 package com.example.screens.Screen.nav
 
+
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -8,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -16,6 +19,7 @@ import androidx.navigation.NavController
 import com.example.screens.Screens
 import com.example.screens.Data.ListaUsuarios
 import com.example.screens.Data.Usuario
+import com.example.screens.R // <- importante
 
 @Composable
 fun ScreenA(navController: NavController) {
@@ -38,6 +42,15 @@ fun ScreenA(navController: NavController) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+
+            Image(
+                painter = painterResource(id = R.drawable.mariposa),
+                contentDescription = "Mariposa decorativa",
+                modifier = Modifier
+                    .size(100.dp)
+                    .padding(bottom = 16.dp)
+            )
+
             OutlinedTextField(
                 value = nombre,
                 onValueChange = { nombre = it },
@@ -88,11 +101,7 @@ fun ScreenA(navController: NavController) {
 
             Button(
                 onClick = {
-                    // Guardar usuario en la lista
-                    ListaUsuarios.agregarUsuario(
-                        Usuario(nombre, correo, profesion)
-                    )
-                    // Navegar a ScreenB con los datos
+                    ListaUsuarios.agregarUsuario(Usuario(nombre, correo, profesion))
                     navController.navigate(
                         Screens.ScreenB.createRoute(nombre, correo, profesion)
                     )
