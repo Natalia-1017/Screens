@@ -19,7 +19,7 @@ import androidx.navigation.NavController
 import com.example.screens.Screens
 import com.example.screens.Data.ListaUsuarios
 import com.example.screens.Data.Usuario
-import com.example.screens.R // <- importante
+import com.example.screens.R
 
 @Composable
 fun ScreenA(navController: NavController) {

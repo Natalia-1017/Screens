@@ -10,7 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.screens.Screen.nav.ScreenA
 import com.example.screens.Screen.nav.ScreenB
-import com.example.screens.Screen.nav.ScreenC // 👈 Asegúrate de importar ScreenC
+import com.example.screens.Screen.nav.ScreenC
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
                     ScreenB(navController, nombre, correo, profesion)
                 }
 
-                // 👉 Nueva ruta para pantalla C
+                
                 composable(route = Screens.ScreenC.route) {
                     ScreenC(navController)
                 }
